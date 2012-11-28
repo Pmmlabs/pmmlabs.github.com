@@ -1,0 +1,37 @@
+#site_center {text-align:center;}
+#main {width:100%}
+
+#content { min-width:645px; }
+
+#header {height:276px; min-width:645px;}
+
+#left_side { width:300px; float:left; background:url(images/col1_bgd.png) no-repeat -80px 47px;}
+#right_side { margin-left:300px;}
+
+.col_1, .col_2, .col_3, .column1, .column2, .column3 { float:left;}
+
+/*======= index.html =======*/
+#page1 #content .row_1 .col_1 {width:48%;}
+#page1 #content .row_1 .col_2 { width:51%;}
+
+/*======= index-1.html =======*/
+#page2 #content .row_1 .col_1 {width:100%;}
+
+/*======= index-2.html =======*/
+#page3 #content .row_1 .col_1 {width:100%;}
+
+/*======= index-3.html =======*/
+#page4 #content .row_1 .col_1 {width:100%;}
+
+/*======= index-4.html =======*/
+#page5 #content .row_1 .col_1 {width:100%;}
+
+/*======= index-5.html =======*/
+#page6 #content .row_1 .col_1 {width:100%;}
+
+
+
+/*=========================*/
+
+
+#footer {background:url(images/footer_bgd.gif) left top repeat-x;}
