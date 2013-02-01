@@ -118,7 +118,7 @@ h1 {color:springgreen; font-weight: bold; font-style: italic; font-size:3.2em; t
 #page3 #content .indent {margin:0 30px 0 5px;}
 #page3 #content .indent1 { padding:0 0 0 16px; line-height:1.33em;}
 #page3 #content .img_indent {margin:0 25px 21px -1px; margin-bottom: 0px; margin-top: 10px;}
-#page3 #content p { font-size:0.92em; margin-bottom:22px;}
+#page3 #content p { font-size: 1em; margin-bottom:22px;}
 #page3 #content .p1 { margin:16px 0 0 0;}
 #page3 #content span { color: red;}
 #page3 #content .top_indent { padding-top:7px;}
