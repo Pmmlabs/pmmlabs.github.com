@@ -43,7 +43,7 @@ h3 { font-size:1.27em; color:#20b4f1; margin:2px 0 8px 0;}
 h4 { font-size:1.1em; margin-bottom:17px;}
 h4 a { color:#20b4f1; font-weight:normal;}
 h7 { font-size:3.33em; color:#2BB3F1; margin-left:3px; font-family:Comic Sans MS; font-weight:bold; margin-top:935px;}
-h1 {color:springgreen; font-weight: bold; font-style: italic; font-size:3.2em; text-shadow: 5px 3px 7px #000000, 0 0 0px black; behavior: url('PIE.htc');}
+h1 {color:springgreen; font-weight: bold; font-style: italic; font-size:3.2em; text-shadow: 5px 3px 7px #000000; behavior: url('PIE.htc');}
 
 .txt1 { color:#20b4f1;}
 
