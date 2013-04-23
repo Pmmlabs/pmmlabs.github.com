@@ -83,7 +83,7 @@ h1 {color:springgreen; font-weight: bold; font-style: italic; font-size:3.2em; t
 #footer .fleft .indent { padding:36px 0 0 58px;}
 #footer .fright { font-family:Tahoma; background:url(images/footer_bgd2.gif) no-repeat right top;}
 #footer .fright .indent { padding:31px 53px 0 0;}
-#footer .fright span { background:url(images/footer_marker.gif) no-repeat 0 2px; padding-left:45px; display:block; line-height:2.8em;}
+#footer .fright span { background: url('images/mail.png') no-repeat; background-size: 48px; height: 50px;  padding-left:50px; display:block; line-height: 40px;}
 
 #left_side .indent { padding:397px 40px 0 40px;}
 
