@@ -2,75 +2,75 @@
    .CODE
    org 100h
 _start:
-; ввод размерности массива в регистр AX
+; ттюф ЁрчьхЁэюёЄш ьрёёштр т ЁхушёЄЁ AX
     mov ah,9
     lea dx,Input_size
     int 21h 
     call ReadInteger
     mov N,ax
-; перевод строки
+; яхЁхтюф ёЄЁюъш
     mov ah,9
     lea dx,crlf
     int 21h
-; ввод левой границы отрезка    
+; ттюф ыхтющ уЁрэшЎ√ юЄЁхчър    
     mov ah,9
     lea dx,Input_A
     int 21h 
     call ReadInteger
     mov A,ax
-; перевод строки
+; яхЁхтюф ёЄЁюъш
     mov ah,9
     lea dx,crlf
     int 21h
-; ввод правой границы отрезка    
+; ттюф яЁртющ уЁрэшЎ√ юЄЁхчър    
     mov ah,9
     lea dx,Input_B
     int 21h 
     call ReadInteger
     mov B,ax
-; перевод строки
+; яхЁхтюф ёЄЁюъш
     mov ah,9
     lea dx,crlf
     int 21h
 
-    mov cx, N	; сохраняем размер массива в сх
+    mov cx, N	; ёюїЁрэ хь ЁрчьхЁ ьрёёштр т ёї
     mov ah,9
     lea dx,Input_numbers
     int 21h
-; ввод элементов массива регистр AX  
+; ттюф ¤ыхьхэЄют ьрёёштр ЁхушёЄЁ AX  
 input:
     call ReadInteger
     mov si, cx  
     add si, si
     mov [Mas+si],ax    
 
-; перевод строки
+; яхЁхтюф ёЄЁюъш
     mov ah,9
     lea dx,crlf
     int 21h
 
 loop input
 
-; вывод массива
+; т√тюф ьрёёштр
     mov ah,9
     lea dx,Res_mas
     int 21h
 
-    mov cx, N	; сохраняем размер массива в сх
-; вывод элементов массива
+    mov cx, N	; ёюїЁрэ хь ЁрчьхЁ ьрёёштр т ёї
+; т√тюф ¤ыхьхэЄют ьрёёштр
 output:
     mov si, cx
     add si, si  
     mov ax,[Mas+si]    
     call WriteInteger
    
-; перевод строки
+; яхЁхтюф ёЄЁюъш
     mov ah,9
     lea dx,crlf
     int 21h
 loop output
 
-; вывод результата
+; т√тюф Ёхчєы№ЄрЄр
     mov ah,9
     lea dx,Res
     int 21h
@@ -80,12 +80,12 @@ loop output
     lea di,Mas+2 
     push di  
     mov bp,sp
-    CALL MAIN_PROGRAM ; вызов процедуры
+    CALL MAIN_PROGRAM ; т√чют яЁюЎхфєЁ√
 ret
-; главная программа
+; уыртэр  яЁюуЁрььр
 MAIN_PROGRAM PROC
 
-     ;  lea di,Mas+2       ; в di адрес Arr[1]  
+     ;  lea di,Mas+2       ; т di рфЁхё Arr[1]  
        ; add bp,2
         mov di,bp+2
         mov cx,bp+4
@@ -97,45 +97,45 @@ check:
         jl No            ; if arr[i]<a
         cmp [di],bx      
         jg No            ; if arr[i]>b
-        dec cx           ; в cx теперь количество непроверенных элементов
-        add di,2         ; в di теперь адрес следующего элемента Arr
+        dec cx           ; т cx ЄхяхЁ№ ъюышўхёЄтю эхяЁютхЁхээ√ї ¤ыхьхэЄют
+        add di,2         ; т di ЄхяхЁ№ рфЁхё ёыхфє■∙хую ¤ыхьхэЄр Arr
         cmp cx,0         
         jg check         ; if n>0 
-        mov  dx,OFFSET Success ; если дошли до этого места - значит ОК 
+        mov  dx,OFFSET Success ; хёыш фю°ыш фю ¤Єюую ьхёЄр - чэрўшЄ ╬╩ 
         jmp print               
 No:     mov  dx,OFFSET Fail         
-print:  mov  ah,9             ; напечатать то, адрес чего в dx
+print:  mov  ah,9             ; эряхўрЄрЄ№ Єю, рфЁхё ўхую т dx
         int  21h              
         mov  ah,4ch                 
         int  21h
 
 	RET
-MAIN_PROGRAM ENDP ; конец процедуры
+MAIN_PROGRAM ENDP ; ъюэхЎ яЁюЎхфєЁ√
 
 ReadInteger proc  
-    push    cx      ; сохранение регистров
+    push    cx      ; ёюїЁрэхэшх ЁхушёЄЁют
     push    bx
     push    dx 
-    mov     fl,0    ; флаг отрицательного числа(0 - полож., 1 -отриц.)
+    mov     fl,0    ; Їыру юЄЁшЎрЄхы№эюую ўшёыр(0 - яюыюц., 1 -юЄЁшЎ.)
     xor     cx, cx  
     mov     bx, 10 
-    call    ReadChar  ; ввод символа
+    call    ReadChar  ; ттюф ёшьтюыр
 
-    cmp     al,'-'   ; если минус - установить флаг
+    cmp     al,'-'   ; хёыш ьшэєё - єёЄрэютшЄ№ Їыру
     je      minus
     jmp     nn
 minus:
     mov     fl,1  
 read: 
-    call    ReadChar   ; ввод очередного символа
+    call    ReadChar   ; ттюф юўхЁхфэюую ёшьтюыр
 nn: cmp     al, 13     ; Enter ?
-    je      done       ; да -  > завершение
+    je      done       ; фр -  > чртхЁ°хэшх
     
-    sub     al, '0'    ;вычитание иначе нет -> перевод цифры char -> int
+    sub     al, '0'    ;т√ўшЄрэшх шэрўх эхЄ -> яхЁхтюф ЎшЇЁ√ char -> int
     xor     ah, ah  
     xor     dx, dx   
     xchg    cx, ax  
-    mul     bx  ;умножение чисел без знака
+    mul     bx  ;єьэюцхэшх ўшёхы схч чэрър
     add     ax, cx  
     xchg    ax, cx  
     jmp     read  
@@ -145,7 +145,7 @@ done:
     je      eee
     jmp     ee
 eee:
-    neg     ax ; изменение знака
+    neg     ax ; шчьхэхэшх чэрър
 ee: 
     pop     dx
     pop     bx  
@@ -153,14 +153,14 @@ ee:
     ret  
 ReadInteger endp  
 
-; ввод одного символа   
+; ттюф юфэюую ёшьтюыр   
 ReadChar proc  
     mov     ah,1 
     int     21h 
     ret  
 ReadChar endp
 
-; вывод 10-числа
+; т√тюф 10-ўшёыр
 WriteInteger proc near 
     push    ax  
     push    cx  
@@ -168,11 +168,11 @@ WriteInteger proc near
     push    dx  
     xor     cx, cx  
     mov     bx, 10  
-; число отрицательное?    
+; ўшёыю юЄЁшЎрЄхы№эюх?    
     cmp     ax,0
-    jl      ddd	; если - да
-    jmp     divl	; если - нет
-; вывести минус и поменять знак
+    jl      ddd	; хёыш - фр
+    jmp     divl	; хёыш - эхЄ
+; т√тхёЄш ьшэєё ш яюьхэ Є№ чэръ
 ddd:
     push    ax
     mov     dl, '-'  
@@ -181,8 +181,8 @@ ddd:
     pop     ax
     neg     ax  
 
-; получить 10-цифры и поместить их в стек,
-; в cx - количество полученных цифр
+; яюыєўшЄ№ 10-ЎшЇЁ√ ш яюьхёЄшЄ№ шї т ёЄхъ,
+; т cx - ъюышўхёЄтю яюыєўхээ√ї ЎшЇЁ
 divl:  
     xor     dx, dx  
     idiv    bx  
@@ -191,7 +191,7 @@ divl:
     cmp     ax,0     
     jg     divl  
 
-; достать из стека, перевести в код ASSII  и вывести  
+; фюёЄрЄ№ шч ёЄхър, яхЁхтхёЄш т ъюф ASSII  ш т√тхёЄш  
 popl:  
     pop     ax  
     add     al, '0'
@@ -206,7 +206,7 @@ popl:
     ret  
 WriteInteger endp
 
-; вывод одного символа  
+; т√тюф юфэюую ёшьтюыр  
 WriteChar proc  
     push    ax  
     push    dx  
@@ -221,22 +221,22 @@ WriteChar endp
 A dw ?
 B dw ?
 N dw ?
-Mas dw 256 dup (?)                      ; массив
+Mas dw 256 dup (?)                      ; ьрёёшт
 fl dw ?
-Success db 'Все числа попадают в заданный диапазон!' 
+Success db '┬ёх ўшёыр яюярфр■Є т чрфрээ√щ фшрярчюэ!' 
 db 0Dh,0Ah,'$' 
-Fail db 'В заданный диапазон попадают не все числа...' 
+Fail db '┬ чрфрээ√щ фшрярчюэ яюярфр■Є эх тёх ўшёыр...' 
 db 0Dh,0Ah,'$' 
-Input_A db 'Введите левую границу:' 
+Input_A db '┬тхфшЄх ыхтє■ уЁрэшЎє:' 
 db 0Dh,0Ah,'$' 
-Input_B db 'Введите правую границу:' 
+Input_B db '┬тхфшЄх яЁртє■ уЁрэшЎє:' 
 db 0Dh,0Ah,'$' 
-Input_size db 'Введите размер массива:' 
+Input_size db '┬тхфшЄх ЁрчьхЁ ьрёёштр:' 
 db 0Dh,0Ah,'$' 
-Input_numbers db 'Введите элементы массива (через Enter) :' 
+Input_numbers db '┬тхфшЄх ¤ыхьхэЄ√ ьрёёштр (ўхЁхч Enter) :' 
 db 0Dh,0Ah,'$'
-Res_mas db 'Массив:', 0dh,0ah,'$'
+Res_mas db '╠рёёшт:', 0dh,0ah,'$'
 crlf db 0dh,0ah,'$'
-Res db 'Результат:' 
+Res db '╨хчєы№ЄрЄ:' 
 db 0Dh,0Ah,'$'
 end _start
