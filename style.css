@@ -93,7 +93,7 @@ h1 {color:springgreen; font-weight: bold; font-style: italic; font-size:3.2em; t
 #page1 #left_side .indent1 .title { margin-bottom:31px;}
 #page1 #content .row_1 .indent { padding:0 0 0 5px;}
 #page1 #content .row_1 .col_1 .indent { padding:0 11px 0 0;}
-#page1 #content .row_1 .col_1 .indent1 { padding:23px 0 0 14px;}
+/*#page1 #content .row_1 .col_1 .indent1 { padding:23px 0 0 14px;}*/
 #page1 #content .row_1 .col_1 p { margin-bottom:14px;}
 #page1 #content .row_1 .col_1 .indent2 { padding:48px 0 0 12px;}
 #page1 #content .row_1 .col_1 .indent2 .title { margin-bottom:25px;}
