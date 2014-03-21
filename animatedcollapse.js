@@ -1,7 +1,9 @@
+$(function(){
 $('.ind .link2').click(function (){
 if (!confirm('\t\t\t\tСАНКЦИИ\n\t\tПрезидент США Барак Обама\nлишен права скачивать файлы с этого сайта.\n\tПодтвердите, что вы не Барак Обама:')) {
     return false;
     }
+});
 });
 
 var uniquepageid=window.location.href.replace("http://"+window.location.hostname, "").replace(/^\//, "") //get current page path and name, used to uniquely identify this page for persistence feature
