@@ -1,5 +1,5 @@
 * { margin:0; padding:0;}
-body { background:#fff; font-family:Arial; font-size:100%; line-height:1.25em;  }
+body { background:url(images/tall_top.gif) left top repeat-x #fff; font-family:Arial; font-size:100%; line-height:1.25em;  }
 /*in_line*/
 input, select { vertical-align:middle; font-weight:normal;}
 img {border:0; vertical-align:middle; text-align:left;}
@@ -19,7 +19,7 @@ a{color: inherit;}
 .alignright { text-align:right;}
 p { margin:0; padding:0;}
 
-.tall_top { background:url(images/tall_top.gif) left top repeat-x #fff; width:100%;}
+.tall_top { width:100%;}
 
 .form { height:26px;}
 .form input {width:273px; height:18px; background:#fff; border:1px solid #b4b4b4; color:#8c8c8c; font-size:0.92em; font-family:Tahoma;}
