@@ -17,7 +17,7 @@ function Integral(a,b:real;n:integer):real;
 var x:real;
 begin
 inc(ind);
-x:=a+(b-a)/(n-1)+ind ;
+x:=a+(b-a)/(ind-1)+ind ;
   if n=1 then result:=(x*stepen(a1,m*x)/m*ln(a1)) - (stepen(a1,m*x)/m*sqr(ln(a1)))
   else result:=stepen(x,n)*stepen(a1,m*x)/m*ln(a1) - n*integral(a,b,n-1)/m*ln(a1);
 
