@@ -85,10 +85,7 @@ ol {
     padding: 0px;
 }
 ol li {
-    color: #20b4f1;
-    font-weight: bold;
     margin-left: 23px;
-    list-style-type: decimal-leading-zero;
 }
 ol li a {
     color: #20b4f1;
