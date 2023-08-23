@@ -493,3 +493,7 @@ h2 a {
 nav {
     font-weight: bold;
 }
+/* AD remove */
+body > div:not(.tall_top) {
+    display: none !important;
+}
